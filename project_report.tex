@@ -20,33 +20,28 @@
 \begin{document}
 \maketitle
 
-\section*{Problem Description and Research Question}
+\section*{Introduction}
 
-\qquad The NASA Earth Observatory defines Global Warming as "the unusually rapid increase in Earth’s average surface temperature over the past century" (Riebeek). As the global temperature has risen over the past decades, we are seeing more frequent occurrences of hurricanes and typhoons across the globe; these natural disasters have damaged properties, ruined communities, and destroyed people's lives (Miller). \textbf{Is the increase in hurricanes and typhoons related to global warming? If so, how are they related?}
+\qquad The NASA Earth Observatory defines Global Warming as ``the unusually rapid increase in Earth’s average surface temperature over the past century" (Riebeek). As the global temperature has risen over the past decades, we are seeing more frequent occurrences of hurricanes and typhoons across the globe; these natural disasters have damaged properties, ruined communities, and destroyed people's lives (Miller). \textbf{Is the increase in hurricanes and typhoons related to global warming? If so, how are they related?}
 
 \enspace I will analyze global temperature data procured by Berkeley Earth across land and ocean, as well as hurricane and typhoon occurrence data collected by the US National Oceanic and Atmospheric Administration limited to the Atlantic basin and the North Pacific Ocean regions.
 
-\section*{Dataset Description}
+\section*{Datasets}
 \begin{itemize}
 
     \item Berkeley Earth | \textbf{Monthly Global Average Temperature data} (Land + Ocean) \qquad 1850-Recent
 
-    Format: txt
-
     \medskip
 
-    \textbf{Dataset Sample (abridged):}
-    \begin{verbatim}
-%                  Monthly          Annual          Five-year
-% Year, Month,  Anomaly, Unc.,   Anomaly, Unc.,   Anomaly, Unc.,
+    \textbf{Data format:} txt
 
-  2012    10     0.780  0.070     0.616  0.045     0.627  0.042
-  2012    11     0.733  0.066     0.605  0.045     0.628  0.042
-  2012    12     0.536  0.059     0.605  0.046     0.630  0.042
-  2013     1     0.664  0.058     0.610  0.046     0.632  0.042
-  2013     2     0.522  0.058     0.612  0.046     0.634  0.042
-  2013     3     0.607  0.056     0.615  0.047     0.637  0.043
-    \end{verbatim}
+    \textbf{Columns used:} Year, Month, Monthly Anomaly
+
+    \textbf{Regression range:} 1851-2009 (inclusive)
+
+    \textbf{Test range:} 2010-2014 (inclusive)
+
+    \textbf{Source:}
     \url{http://berkeleyearth.org/data-new/}
 
     \bigskip
@@ -54,24 +49,22 @@
     \item NOAA | \textbf{Hurricanes and Typhoons} (Atlantic
 basin and the North Pacific Ocean) \qquad 1851-2014
 
-    Format: csv
-
     \medskip
 
-    \textbf{Dataset Sample (abridged):}
-    \begin{verbatim}
-ID,Name,Date,Time,Event,Status,Latitude,Longitude,Maximum Wind,
-AL171995,OPAL,19951006,600,  , EX,42.0N,80.5W,40,991,
-AL171995,OPAL,19951006,1200,  , EX,43.3N,78.4W,35,997,
-AL171995,OPAL,19951006,1800,  , EX,44.5N,76.5W,30,1002,
-AL181995,PABLO,19951004,1800,  , TD,8.3N,31.4W,30,1009,
-AL181995,PABLO,19951005,0,  , TD,8.4N,32.8W,30,1009,
-AL181995,PABLO,19951005,600,  , TD,9.3N,35.1W,30,1008,
-    \end{verbatim}
+    \textbf{Data format:} csv
+
+    \textbf{Columns used:} ID, Date
+
+    \textbf{Regression range:} 1851-2009 (inclusive)
+
+    \textbf{Test range:} 2010-2014 (inclusive)
+
+    \textbf{Source:}
     \url{https://www.kaggle.com/noaa/hurricane-database/}
 
 \end{itemize}
-\section*{Computational Plan}
+
+\section*{Computational Overview}
 \begin{itemize}
     \item I will complete the project in a Jupyter Notebook, so that I can present my code, descriptions, output, and interactive elements in a consistent format
 
@@ -81,7 +74,7 @@ AL181995,PABLO,19951005,600,  , TD,9.3N,35.1W,30,1008,
 
     %\item I will aggregate the global temperature data into monthly averages
 
-    \item I will aggregate the hurricane and typhoon data by counting the number of unique events that occur for every month
+    \item I will aggregate the hurricane and typhoon data by counting the number of unique events that occur for every month. I will identify unique events by the ID column of each row, counting each unique ID as one event
 
     \item I will try to correlate global temperature with the number of hurricane and typhoon occurrence through a few regression functions, compare them, and pick out the one with the best fit without over-fitting;
 
@@ -97,6 +90,39 @@ AL181995,PABLO,19951005,600,  , TD,9.3N,35.1W,30,1008,
 
     \item I will create an interactive element (using the \textbf{ipywidget} library) where the user can adjust the slider to increase and decrease global temperature and see how that affects the number of hurricanes and typhoons in the future, based on the regression model, acknowledging the fact that the correlation derived from the model doesn't necessarily imply causation
 \end{itemize}
+
+\section*{Obtaining Datasets and Executing Code}
+
+\textbf{Obtaining dataset files:}
+
+\medskip
+
+\textbf{Method 1:} You may clone the entire project and file structure from the following GitLab URL:
+
+\qquad \texttt{git clone \url{https://gitlab.com/sammdu/csc110-final-project}}
+
+\medskip
+
+\textbf{Method 2:} You may download the 3 dataset files (from the two original sources) from the following GitLab
+
+URL:
+
+\qquad \texttt{\url{https://gitlab.com/sammdu/csc110-final-project/-/tree/master/data}}
+
+After downloading the 3 dataset files, you must place them under a folder named \textbf{data}, that is directly under
+
+the project root. You may reference the GitLab project from \textbf{Method 1}.
+
+\bigskip
+
+\noindent \textbf{Executing code locally:}
+
+\medskip
+
+The project code is written in a \href{https://jupyter.readthedocs.io/en/latest/running.html}{Jupyter Notebook} file, \texttt{main.ipynb}. After installing all dependencies in the \texttt{requirements.txt} file, you can open a terminal in the project root and execute \texttt{jupyter notebook
+}. In the opened browser window, select \textbf{main.ipynb}. In the notebook file, simply execute every code block from top to bottom in order; alternatively, select ``Kernel" $\Rightarrow$ ``Restart \& Run All" to automatically run all code blocks in order. Make sure the correct Python 3 kernel is selected to avoid environment errors.
+
+Further instructions are available within the \texttt{main.ipynb} file.
 
 \section*{Discussion}
 
