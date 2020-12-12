@@ -22,5 +22,5 @@ Project path(s):
 &emsp;&emsp; `data/noaa-pacific.csv`   
 
 ### License
-Source code distributed under the MIT License. See [LICENSE](https://gitlab.com/sammdu/csc110-final-project/-/blob/master/LICENSE) file.
+Source code distributed under the MIT License. See [LICENSE](https://gitlab.com/sammdu/csc110-final-project/-/blob/master/LICENSE) file.   
 Datasets distributed under their respective original licenses.
