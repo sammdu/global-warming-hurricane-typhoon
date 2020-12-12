@@ -10,13 +10,15 @@ I will analyze global temperature data procured by Berkeley Earth across land an
 
 ### Data Sources
 
-#### Berkeley Earth | Monthly Global Average Temperature data (Land + Ocean)
+#### Berkeley Earth | The Berkeley Earth Land/Ocean Temperature Record
 [http://berkeleyearth.org/data-new/](http://berkeleyearth.org/data-new/)   
+License: [CC BY-4.0](https://creativecommons.org/licenses/by/4.0/)   
 Project path(s):   
 &emsp;&emsp; `data/berkeley-earth-global-temperature.txt`   
 
 #### NOAA | Hurricanes and Typhoons (Atlantic basin and the North Pacific Ocean)
 [https://www.kaggle.com/noaa/hurricane-database/](https://www.kaggle.com/noaa/hurricane-database/)   
+License: [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/)   
 Project path(s):   
 &emsp;&emsp; `data/noaa-atlantic.csv`   
 &emsp;&emsp; `data/noaa-pacific.csv`   
