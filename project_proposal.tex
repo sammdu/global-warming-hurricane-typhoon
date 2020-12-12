@@ -1,0 +1,124 @@
+\documentclass[fontsize=11pt]{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{hanging}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+}
+\urlstyle{same}
+
+\title{CSC110 Project Proposal: \\The Effect of Global Warming on Hurricane and Typhoon Occurrence}
+\author{Mu "Samm" Du}
+\date{Friday, December 14, 2020}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Description and Research Question}
+
+\qquad The NASA Earth Observatory defines Global Warming as "the unusually rapid increase in Earth’s average surface temperature over the past century" (Riebeek). As the global temperature has risen over the past decades, we are seeing more frequent occurrences of hurricanes and typhoons across the globe; these natural disasters have damaged properties, ruined communities, and destroyed people's lives (Miller). \textbf{Is the increase in hurricanes and typhoons related to global warming? If so, how are they related?} 
+
+\enspace I will analyze global temperature data procured by Berkeley Earth across land and ocean, as well as hurricane and typhoon occurrence data collected by the US National Oceanic and Atmospheric Administration limited to the Atlantic basin and the North Pacific Ocean regions.
+
+\section*{Dataset Description}
+\begin{itemize}
+
+    \item Berkeley Earth | \textbf{Monthly Global Average Temperature data} (Land + Ocean) \qquad 1850-Recent
+    
+    Format: txt
+    
+    \medskip
+    
+    \textbf{Dataset Sample (abridged):}
+    \begin{verbatim}
+%                  Monthly          Annual          Five-year   
+% Year, Month,  Anomaly, Unc.,   Anomaly, Unc.,   Anomaly, Unc.,
+
+  2012    10     0.780  0.070     0.616  0.045     0.627  0.042 
+  2012    11     0.733  0.066     0.605  0.045     0.628  0.042 
+  2012    12     0.536  0.059     0.605  0.046     0.630  0.042 
+  2013     1     0.664  0.058     0.610  0.046     0.632  0.042 
+  2013     2     0.522  0.058     0.612  0.046     0.634  0.042 
+  2013     3     0.607  0.056     0.615  0.047     0.637  0.043 
+    \end{verbatim}
+    \url{http://berkeleyearth.org/data-new/}
+    
+    \bigskip
+    
+    \item NOAA | \textbf{Hurricanes and Typhoons} (Atlantic
+basin and the North Pacific Ocean) \qquad 1851-2014
+
+    Format: csv
+    
+    \medskip
+    
+    \textbf{Dataset Sample (abridged):}
+    \begin{verbatim}
+ID,Name,Date,Time,Event,Status,Latitude,Longitude,Maximum Wind,
+AL171995,OPAL,19951006,600,  , EX,42.0N,80.5W,40,991,
+AL171995,OPAL,19951006,1200,  , EX,43.3N,78.4W,35,997,
+AL171995,OPAL,19951006,1800,  , EX,44.5N,76.5W,30,1002,
+AL181995,PABLO,19951004,1800,  , TD,8.3N,31.4W,30,1009,
+AL181995,PABLO,19951005,0,  , TD,8.4N,32.8W,30,1009,
+AL181995,PABLO,19951005,600,  , TD,9.3N,35.1W,30,1008,
+    \end{verbatim}
+    \url{https://www.kaggle.com/noaa/hurricane-database/}
+    
+\end{itemize}
+\section*{Computational Plan}
+\begin{itemize}
+    \item I will complete the project in a Jupyter Notebook, so that I can present my code, descriptions, output, and interactive elements in a consistent format
+
+    \item I will filter the datasets to only include relevant information to my analysis, such as the temperature values and timestamps in the global temperature data
+    
+    \item I will limit the time range such that the two datasets completely overlap in time
+    
+    %\item I will aggregate the global temperature data into monthly averages
+    
+    \item I will aggregate the hurricane and typhoon data by counting the number of unique events that occur for every month
+    
+    \item I will try to correlate global temperature with the number of hurricane and typhoon occurrence through a few regression functions, compare them, and pick out the one with the best fit without over-fitting; 
+    
+    It is also important to acknowledge that while the temperature data is on a global scale, the hurricane and typhoon occurrence data is only limited to the Atlantic and Pacific regions, therefore a degree of error is involved with the correlation;
+    
+    I will use the \textbf{scikit-learn} library for the purpose of construction a regression model, since \textbf{scikit-learn} has a trove of regression functions built-in, and I will use \textbf{plotly} to present the data graphically, since it is a versatile plotting library that I have become familiar with in class
+    
+    \item I will do a projection for the number of hurricanes and typhoons that are likely to occur in the next 5 and next 10 years, if the temperature keep rising based on the regression model constructed above;
+    
+    It is also important to note that since the hurricane and typhoon data is only as recent as 2014, the projection into the future may not be as accurate
+    
+    \item To test the accuracy of my model, I will designate data between years 2010 and 2014 (5-year interval) as the testing range, and compare the projection from my model with the data during that interval
+    
+    \item I will create an interactive element (using the \textbf{ipywidget} library) where the user can adjust the slider to increase and decrease global temperature and see how that affects the number of hurricanes and typhoons in the future, based on the regression model, acknowledging the fact that the correlation derived from the model doesn't necessarily imply causation
+\end{itemize}
+\section*{References (MLA)}
+
+\begin{hangparas}{0.5in}{1}
+
+“Changes in Earth's Global Average Percentage Surface Temperature.” Berkeley Earth, Accessed 11 Dec. 2020, berkeleyearth.org/data-new/. 
+
+\bigskip
+
+“Hurricanes and Typhoons, 1851-2014.” Kaggle, National Oceanic and Atmospheric Administration, 20 Jan. 2017, www.kaggle.com/noaa/hurricane-database. 
+
+\bigskip
+
+Miller, Peter. “Weather Gone Wild.” National Geographic, Sept. 2012, www.nationalgeographic.com/magazine/\\2012/09/extreme-weather-global-climate-change-effects/. 
+
+\bigskip
+
+Riebeek, Holli. “Global Warming.” Earth Observatory, NASA, 3 June 2010, earthobservatory.nasa.gov/features/\\GlobalWarming. 
+
+\end{hangparas}
+% NOTE: LaTeX does have a built-in way of generating references automatically,
+% but it's a bit tricky to use so we STRONGLY recommend writing your references
+% manually, using a standard academic format like APA or MLA.
+% (E.g., https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/general_format.html)
+
+\end{document}
