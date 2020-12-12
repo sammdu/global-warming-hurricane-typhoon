@@ -2,7 +2,7 @@
 
 # The Effect of Global Warming on Hurricane and Typhoon Occurrence
 
-## Problem Description and Research Question
+## Introduction
 
 The  NASA  Earth  Observatory  defines  Global  Warming  as  ”the  unusually  rapid  increase  in  Earth’s  average surface temperature over the past century” ([Riebeek](https://earthobservatory.nasa.gov/features/GlobalWarming)).  As the global temperature has risen over the past decades,we are seeing more frequent occurrences of hurricanes and typhoons across the globe; these natural disasters have damaged properties, ruined communities, and destroyed people’s lives ([Miller](https://www.nationalgeographic.com/magazine/2012/09/extreme-weather-global-climate-change-effects/)). **Is the increase in hurricanes and typhoons related to global warming? If so, how are they related?**
 
