@@ -29,7 +29,7 @@
 \section*{Datasets}
 \begin{itemize}
 
-    \item Berkeley Earth | \textbf{The Berkeley Earth Land/Ocean Temperature Record} \qquad 1850-Recent
+    \item Berkeley Earth | \textbf{The Berkeley Earth Land/Ocean Temperature Record}
 
     \medskip
 
@@ -37,30 +37,40 @@
 
     \textbf{Columns used:} Year, Month, Monthly Anomaly
 
-    \textbf{Regression range:} 1851-2009 (inclusive)
-
-    \textbf{Test range:} 2010-2014 (inclusive)
+    \textbf{Date range:} 1850-2020 (inclusive)
 
     \textbf{Source:}
     \url{http://berkeleyearth.org/data-new/}
 
     \bigskip
 
-    \item NOAA | \textbf{Hurricanes and Typhoons} (Atlantic
-basin and the North Pacific Ocean) \qquad 1851-2014
+    \item NOAA | \textbf{Atlantic hurricane database} (HURDAT2)
 
     \medskip
 
-    \textbf{Data format:} csv
+    \textbf{Data format:} csv in txt
 
     \textbf{Columns used:} ID, Date
 
-    \textbf{Regression range:} 1851-2009 (inclusive)
-
-    \textbf{Test range:} 2010-2014 (inclusive)
+    \textbf{Date range:} 1851-2019 (inclusive)
 
     \textbf{Source:}
-    \url{https://www.kaggle.com/noaa/hurricane-database/}
+    \url{https://www.nhc.noaa.gov/data/#hurdat}
+
+    \bigskip
+
+    \item NOAA | \textbf{Northeast and North Central Pacific hurricane database} (HURDAT2)
+
+    \medskip
+
+    \textbf{Data format:} csv in txt
+
+    \textbf{Columns used:} ID, Date
+
+    \textbf{Date range:} 1949-2019 (inclusive)
+
+    \textbf{Source:}
+    \url{https://www.nhc.noaa.gov/data/#hurdat}
 
 \end{itemize}
 
@@ -133,6 +143,10 @@ TODO: include discussion
 
 \begin{hangparas}{0.5in}{1}
 
+“Best Track Data (HURDAT2).” \textit{NHC Data Archive}, NOAA, Apr. 2020, www.nhc.noaa.gov/data/\#hurdat.
+
+\bigskip
+
 “Changes in Earth's Global Average Percentage Surface Temperature.” \textit{Berkeley Earth}, Accessed 11 Dec. 2020, berkeleyearth.org/data-new/.
 
 \bigskip
@@ -142,10 +156,6 @@ TODO: include discussion
 \bigskip
 
 Fincher, Jon. ``Reading and Writing CSV Files in Python." \textit{Real Python}, 21 Nov. 2020, realpython.com/python-csv/.
-
-\bigskip
-
-“Hurricanes and Typhoons, 1851-2014.” \textit{Kaggle}, National Oceanic and Atmospheric Administration, 20 Jan. 2017, www.kaggle.com/noaa/hurricane-database.
 
 \bigskip
 
