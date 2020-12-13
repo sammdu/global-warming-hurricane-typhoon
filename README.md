@@ -19,11 +19,11 @@ Project path(s):
 &emsp;&emsp; `data/berkeley-earth-global-temperature.txt`   
 
 ##### NOAA | Hurricanes and Typhoons (Atlantic basin and the North Pacific Ocean)
-[https://www.kaggle.com/noaa/hurricane-database/](https://www.kaggle.com/noaa/hurricane-database/)   
+[https://www.nhc.noaa.gov/data/#hurdat](https://www.nhc.noaa.gov/data/#hurdat)   
 License: [CC0 Public Domain](https://creativecommons.org/publicdomain/zero/1.0/)   
 Project path(s):   
-&emsp;&emsp; `data/noaa-atlantic.csv`   
-&emsp;&emsp; `data/noaa-pacific.csv`   
+&emsp;&emsp; `data/noaa-atlantic.txt`   
+&emsp;&emsp; `data/noaa-pacific.txt`   
 
 ## License
 Source code distributed under the MIT License. See [LICENSE](https://gitlab.com/sammdu/csc110-final-project/-/blob/master/LICENSE) file.   
