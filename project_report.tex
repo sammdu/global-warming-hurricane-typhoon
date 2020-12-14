@@ -24,7 +24,7 @@
 
 \qquad The NASA Earth Observatory defines Global Warming as ``the unusually rapid increase in Earth’s average surface temperature over the past century" (Riebeek). As the global temperature has risen over the past decades, we are seeing more frequent occurrences of hurricanes and typhoons across the globe; these natural disasters have damaged properties, ruined communities, and destroyed people's lives (Miller). \textbf{Is the increase in hurricanes and typhoons related to global warming? If so, how are they related?}
 
-\enspace I will analyze global temperature data procured by Berkeley Earth across land and ocean, as well as hurricane and typhoon occurrence data collected by the US National Oceanic and Atmospheric Administration limited to the Atlantic basin and the North Pacific Ocean regions.
+\enspace I will analyze global temperature data procured by Berkeley Earth across land and ocean, as well as hurricane and typhoon occurrence data collected by the US National Oceanic and Atmospheric Administration limited to the Atlantic basin and the Pacific Ocean regions.
 
 \section*{Datasets}
 \begin{itemize}
@@ -119,6 +119,14 @@ After downloading the 3 dataset files, you must place them under a folder named 
 
 \bigskip
 
+\noindent \textbf{View notebook online:}
+
+\medskip
+
+\url{https://nbviewer.jupyter.org/urls/gitlab.com/sammdu/csc110-final-project/-/raw/master/main.ipynb}
+
+\bigskip
+
 \noindent \textbf{Executing code locally:}
 
 \medskip
@@ -128,12 +136,24 @@ The project code is written in a \href{https://jupyter.readthedocs.io/en/latest/
 
 \section*{Changes from Proposal}
 \begin{itemize}
-    \item TODO
+    \item No longer seek to predict future hurricane/typhoon events because correlation does not imply causation
+
+    \item Using the NOAA data directly from NOAA website instead of Kaggle, for more recent data
+
+    \item Isolate ~8\% of data for testing the reliability of the correlation
 \end{itemize}
 
 \section*{Discussion}
 
-TODO: include discussion
+Despite significant variance in data, a weak direct correlation can be observed between the global temperature and hurricane/typhoon event count.
+
+However, no regression model out of the two that were tested reliably predict the number of hurricane/typhoon events based on global temperature.
+
+Between the two regression models, linear regression most accurately reflect the correlation between global temperature and the number of hurricane/typhoon events based both on $R^2$ scores and visual inspection.
+
+For polynomial regression, a 3rd degree curve results in the smallest $R^2$ value on the Atlantic testing data, whereas a 2nd degree curve results in the smallest $R^2$ value on the Pacific testing data.
+However, these curves clearly exhibits signs of overfitting, and is worse at reflecting the correlation between global temperature and the number of hurricane/typhoon events compared to linear regression.
+
 
 \section*{References (MLA)}
 
