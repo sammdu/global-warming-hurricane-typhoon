@@ -25,4 +25,4 @@ SOFTWARE.
 """
 
 import subprocess
-subprocess.run(["jupyter", "notebook"])
+subprocess.run(["jupyter", "notebook", "./main.ipynb"])
