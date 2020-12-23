@@ -10,6 +10,9 @@ The  NASA  Earth  Observatory  defines  Global  Warming  as  ”the  unusually  
 
 I will analyze global temperature data procured by Berkeley Earth across land and ocean, as well as hurricane and typhoon occurrence data collected by the US National Oceanic and Atmospheric Administration limited to the Atlantic basin and the Pacific Ocean regions.
 
+## Jupyter Notebook
+You may view the Jupyter Notebook online, via this link: https://nbviewer.jupyter.org/urls/gitlab.com/sammdu/csc110-final-project/-/raw/master/main.ipynb
+
 ## Data Sources
 
 ##### Berkeley Earth | The Berkeley Earth Land/Ocean Temperature Record
